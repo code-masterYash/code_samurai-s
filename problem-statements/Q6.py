@@ -1,25 +1,9 @@
-def convert_temperature(value: float, unit: str) -> float | str:
- 
+def convert_temperature(value, unit):
     unit = unit.upper()
 
     if unit == 'C':
-       
-        result = (value * 9/5) + 32
-        return round(result, 1)
+        return round((value * 9/5) + 32, 1)
+    if unit == 'F':
+        return round((value - 32) * 5/9, 1)
+    return "Invalid Unit"
 
-    elif unit == 'F':
-        
-        result = (value - 32) * 5/9
-        return round(result, 1)
-
-    else:
-      
-        return "Invalid Unit"
-
-
-if __name__ == "__main__":
-    temp_value = float(input("Enter temperature value: "))
-    temp_unit = input("Enter unit (C/F): ")
-
-    converted = convert_temperature(temp_value, temp_unit)
-    print("Converted Temperature:", converted)

@@ -11,4 +11,4 @@ def average_passing_grades(grades):
         return 0.0
 
     return total / count
-\
+

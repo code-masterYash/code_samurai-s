@@ -5,7 +5,3 @@ def convert_seconds(total_seconds: int) -> str:
     return f"{minutes}m {seconds}s"
 
 
-if __name__ == "__main__":
-    time_input = int(input("Enter total seconds: "))
-    result = convert_seconds(time_input)
-    print("Converted time:", result)

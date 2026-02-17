@@ -1,13 +1,11 @@
-def calculate(expression: str) -> float:
+def calculate(expression):
     expression = expression.replace(" ", "")
     
     stack = []
     num = 0
     sign = '+'
     
-    for i in range(len(expression)):
-        char = expression[i]
-        
+    for i, char in enumerate(expression):
         if char.isdigit():
             num = num * 10 + int(char)
         
@@ -24,11 +22,6 @@ def calculate(expression: str) -> float:
             sign = char
             num = 0
     
-    return float(round(sum(stack), 2))
+    return round(sum(stack), 2)
 
-
-if __name__ == "__main__":
-    expr = input("Enter mathematical expression: ")
-    result = calculate(expr)
-    print("Result:", result)
 
